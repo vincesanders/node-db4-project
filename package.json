@@ -1,0 +1,19 @@
+{
+  "name": "node-db4-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/vincesanders/node-db4-project.git",
+  "author": "Vincent Sanders <vincesanders@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "dependencies": {
+    "knex": "^0.20.10",
+    "sqlite3": "^4.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
