@@ -15,7 +15,7 @@ exports.up = function(knex) {
         tbl.increments().unsigned();
         tbl.integer('recipe_id').unsigned().notNullable().references('id').inTable('recipe').onDelete('RESTRICT').onUpdate('CASCADE');
         tbl.integer('step_number').notNullable();
-        tbl.string('text').notNullable();
+        tbl.text('text').notNullable(); //needs to be text, string has a limit
     });
 };
 
