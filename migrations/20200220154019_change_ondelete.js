@@ -1,5 +1,12 @@
-
+//deleting all tables
 exports.up = function(knex) {
+    return knex.schema.dropTableIfExists('instruction')
+        .dropTableIfExists('recipe_ingredients')
+        .dropTableIfExists('ingredient')
+        .dropTableIfExists('recipe');
+};
+
+exports.down = function(knex) {
     return knex.schema.createTable('recipe', tbl => {
         tbl.increments().unsigned();
         tbl.string('name').notNullable();
@@ -17,11 +24,4 @@ exports.up = function(knex) {
         tbl.integer('step_number').notNullable();
         tbl.string('text').notNullable();
     });
-};
-
-exports.down = function(knex) {
-    return knex.schema.dropTableIfExists('instruction')
-        .dropTableIfExists('recipe_ingredients')
-        .dropTableIfExists('ingredient')
-        .dropTableIfExists('recipe');
 };

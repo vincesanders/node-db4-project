@@ -7,7 +7,7 @@ exports.up = function(knex) {
         tbl.increments().unsigned();
         tbl.string('name').notNullable();
     }).createTable('recipe_ingredients', tbl => {
-        tbl.primary(['recipe_id', 'ingredient_id']); //set foreign keys BOTH as primary keys
+        tbl.increments().unsigned();
         tbl.integer('recipe_id').unsigned().notNullable().references('id').inTable('recipe').onDelete('RESTRICT').onUpdate('CASCADE');
         tbl.float('quantity').notNullable();
         tbl.integer('ingredient_id').unsigned().notNullable().references('id').inTable('ingredient').onDelete('RESTRICT').onUpdate('CASCADE');
